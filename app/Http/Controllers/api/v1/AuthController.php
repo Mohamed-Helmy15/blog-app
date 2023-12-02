@@ -39,13 +39,7 @@ class AuthController extends Controller
             'email'=> 'required|email',
             'password'=> 'required|confirmed',
         ]);
-        $user = User::create([
-            'name'=> $request->name,
-            'email'=> $request->email,
-            'is_partner'=> $request->is_partner,
-            'role'=> $request->role,
-            'password'=> Hash::make($request->password),
-        ]);
+        $user = User::create($request->all());
         if($request->role === "employer"){
             Employer::create([
                 'user_id'=> $user->id,

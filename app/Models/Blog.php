@@ -24,5 +24,8 @@ class Blog extends Model
         'category',
         'is_paid',
     ];
+    protected $attributes = [
+        'is_paid' => false,
+    ];
     protected $with = ['employer'];
 }

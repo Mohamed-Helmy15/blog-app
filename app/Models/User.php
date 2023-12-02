@@ -27,9 +27,15 @@ class User extends Authenticatable
         'email',
         'password',
         'remember_token',
-        'is_partner',
-        'role'
+        'role',
+	    'is_partner'
+        
     ];
+
+    protected $attributes = [
+	'is_partner'=> false,
+	'role'=>'user'
+  ];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -50,4 +56,5 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
 }

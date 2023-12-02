@@ -42,7 +42,7 @@ class BlogController extends Controller
             'category'=>$request->category,
             'title'=>$request->title,
             'employer_id'=>$employer,
-            'is_paid'=>$request->is_paid,
+            'is_paid'=>$request->is_paid ? $request->is_paid: false,
         ]);
         
         if($request->image){
