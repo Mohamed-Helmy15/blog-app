@@ -11,17 +11,17 @@ class EmployerPolicy
     /**
      * Determine whether the user can view any models.
      */
-    public function viewAny(User $user)
+    public function viewAny(?User $user)
     {
-        return $user->role === 'admin';
+        return true;
     }
 
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, Employer $employer)
+    public function view(User $user , Employer $employer): bool
     {
-        return $user->role === 'admin' || $employer->user_id === $user->id;
+        return $employer->user_id === $user->id;
     }
 
     /**

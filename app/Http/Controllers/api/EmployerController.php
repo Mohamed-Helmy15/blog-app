@@ -11,7 +11,7 @@ class EmployerController extends Controller
 {
 
     public function __construct(){
-        $this->authorizeResource(Employer::class, "employer");
+        //$this->authorizeResource(Employer::class, "employer");
     }
 
     /**
@@ -63,5 +63,10 @@ class EmployerController extends Controller
         $user->delete();
         $employer->delete();
         return response()->json();
+    }
+    public function getAllUsers()
+    {
+        $allUsers = User::all();
+        return response()->json(['data'=> $allUsers]);
     }
 }

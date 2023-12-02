@@ -29,6 +29,7 @@ Route::post("/login", [AuthController::class, "login"]);
 Route::post("/logout", [AuthController::class, "logout"])->middleware("auth:sanctum");
 
 Route::post("/blogs/{blog}/sections/{section}/update", [SectionController::class, "updateSec"])->middleware("auth:sanctum");
+Route::get("/allusers", [EmployerController::class, "getAllUsers"])->middleware("auth:sanctum");
 Route::apiResource('blogs', BlogController::class)->middleware("auth:sanctum");
 Route::apiResource('employers', EmployerController::class); // done
 Route::apiResource('blogs.sections', SectionController::class)->middleware("auth:sanctum");

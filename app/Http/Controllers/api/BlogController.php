@@ -11,7 +11,7 @@ class BlogController extends Controller
 {
 
     public function __construct() {
-        $this->authorizeResource(Blog::class, "blog");
+        //$this->authorizeResource(Blog::class, "blog");
     }
 
     /**

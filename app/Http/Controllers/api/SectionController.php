@@ -11,7 +11,7 @@ class SectionController extends Controller
 {
 
     public function __construct(){
-        $this->authorizeResource(Section::class, 'section');
+        //$this->authorizeResource(Section::class, 'section');
     }
 
     /**

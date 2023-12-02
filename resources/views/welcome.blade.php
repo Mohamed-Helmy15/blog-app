@@ -16,7 +16,16 @@
         </style>
     </head>
     <body class="antialiased">
-        <a href="www.google.com">click the link</a>
-        <div>token:{{$token}}</div>
+        <p>click the link below to reset your password</p>
+        <a style="
+    display: block;
+    background: #0075ff;
+    width: fit-content;
+    padding: 10px 20px;
+    font-size: 22px;
+    text-decoration: none;
+    color: white;
+    border-radius: 20px;
+" href=`http://localhost:3000/reset-password/${token}`>reset the password</a>
     </body>
 </html>
